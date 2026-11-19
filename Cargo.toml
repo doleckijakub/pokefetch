@@ -1,0 +1,20 @@
+[package]
+name = "pokefetch"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+base64 = "0.23.1"
+libc = "0.2.191"
+png = "0.18.1"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+
+[build-dependencies]
+ureq = "2.12.1"
+
+[features]
+# Bake the downloaded assets into the binary instead of reading them from the
+# build directory at runtime. Off by default: an embedded binary contains
+# copyrighted Nintendo / The Pokémon Company material and must not be shared.
+embed = []
